@@ -1,0 +1,164 @@
+
+
+.filter-white{
+    filter: invert(100%);
+}
+
+.toto{
+    float: right;
+}
+
+.space-font {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 100%;
+    color:rgb(173, 222, 255);
+}
+
+.font-azul {
+  color:rgb(173, 222, 255);
+}
+
+.center-custom {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rotation {
+    animation: rotation 10s infinite linear;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+  .nav-link{
+      color: rgb(173, 222, 255);
+  }
+  .navbar-brand{
+      color: rgb(173, 222, 255);
+  }
+
+  .custom-toggler.navbar-toggler {
+    border-color: rgb(173, 222, 255);
+    
+  }
+.mi-btn {
+  background-color: rgb(0, 0, 0);
+  color: rgb(173, 222, 255);
+  cursor: pointer;
+  border: solid 2px rgb(173, 222, 255);
+  
+}
+.mi-btn:hover{
+  border: solid 2px black;
+  background-color: rgb(173, 222, 255);
+  color: black;
+  cursor: pointer;
+}
+
+/*  .btn {
+    border: 2px rgb(173, 222, 255);
+    background-color: rgb(0, 0, 0);
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  */
+  /* Green */
+  .broton {
+    border-color: rgb(173, 222, 255);
+    color: rgb(173, 222, 255);
+  }
+  
+  .broton:hover {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+  
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .my-form-settings {
+    background-color: rgb(48, 48, 48);
+    color: rgb(173, 222, 255);
+    border-color: rgb(173, 222, 255);   
+    margin-left: auto;
+    margin-right: auto; 
+  }
+
+  .form-control{
+    background-color: rgb(48, 48, 48);
+    color: rgb(173, 222, 255);
+    border-color: rgb(173, 222, 255);   
+  }
+  .form-row :focus{
+    background-color: rgb(48, 48, 48);
+    color: rgb(173, 222, 255);
+    border-color: rgb(173, 222, 255);   
+  }
+  .form-group :focus{
+    background-color: rgb(48, 48, 48);
+    color: rgb(173, 222, 255);
+    border-color: rgb(173, 222, 255);   
+  }
+
+
+  ::placeholder{
+    color: rgb(173, 222, 255);
+  }
+
+  .form-inline :focus{
+    background-color: rgb(48, 48, 48);
+    color: rgb(173, 222, 255);
+    border-color: rgb(173, 222, 255);  
+  }
+
+  .table-dark {
+    background-color: black;
+    color: rgb(173, 222, 255);
+  }
+
+  a:hover{
+    text-decoration: none;
+  }
+
