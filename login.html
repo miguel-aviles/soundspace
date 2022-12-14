@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -19,8 +19,8 @@
   <!-- My CSS-->
   <link rel="stylesheet" href="css/styles.css">
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
 <style>
@@ -41,6 +41,8 @@
     background-image: url(svg/good_enough_hamburger_menu.svg);
   }
 </style>
+
+
 <body style="text-align: center;">
 
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: black;">
@@ -80,49 +82,9 @@
     <br>
     <input type="password" id="inputPassword" name="pw" class="form-control" style="background-color: aliceblue;" placeholder="Password" required>
     <input class="w3-button w3-theme w3-black" style="justify-content: center;" type="button" value="Login" onclick="login_user()"></input>
-    <p>Don't Have an Account? <a href = "./signup.html">Sign Up</a></p>
+    <p>Don't Have an Account? <a href = "./signup.php">Sign Up</a></p>
     <p class="mt-5 mb-3 text-muted">© 2022</p>
 
   </form>
 
 </body>
-<script>
-
-    function login_user()
-    {
-      var user_email = document.getElementById('inputEmail').value;
-      var password = document.getElementById('inputPassword').value;
-    
-      if(user_email == "" || password == "")
-      {
-        alert("Please fill in both fields.");
-        return;
-      }
-    /*
-      const Http = new XMLHttpRequest();
-      const url='http://localhost:5000/user_login?user_email='+user_email+'&password='+password;
-      Http.open("GET", url);
-      Http.send();
-      Http.onreadystatechange = (e) =>
-      {
-    
-          var response = JSON.parse(Http.responseText);
-          if(response[0].CODE == "0")
-          {
-            localStorage.setItem("UID",response[0].UID);
-            window.open("./index.html","_self");
-    
-          }else if(response[0].CODE == "1")
-          {
-            alert("Invalid Credentials!");
-          }
-      }
-      */
-    }
-    
-    
-    
-    
-    </script>
-
-</html>

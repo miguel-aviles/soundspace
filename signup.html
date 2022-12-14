@@ -42,7 +42,6 @@
   }
 </style>
 <body style="text-align: center;">
-
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: black;">
     <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -69,7 +68,7 @@
       </ul>
     </div>
   </nav>
-  <form class="form-signin">
+  <form class="form-signin" method="post" action="">
     <br>
     <br>
     <img class="mb-4" src="./images/vinyl_cartoon.png" style="width:100px;height:100px;" alt="Logo">
@@ -81,7 +80,7 @@
     <br>
     <input type="email" id="inputEmail" class="form-control" style="background-color: aliceblue;" placeholder="Email address"  required>
     <br>
-    <input  id="inpurPhone" class="form-control" style="background-color: aliceblue;" placeholder="Phone Numer"  required>
+    <input  id="phone" class="form-control" style="background-color: aliceblue;" placeholder="Phone Numer"  required>
     <br>
     <input type="password" id="inputPassword" class="form-control" style="background-color: aliceblue;" placeholder="Password"  required>
     <div class="checkbox mb-3">
@@ -89,57 +88,15 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <input id="make_user_button" class="w3-button w3-theme w3-black" type="button" value="Sign Up" onclick="create_user()"></input>
+    <input id="make_user_button" class="w3-button w3-theme w3-black" type="button" name="button" value="SignUp"></input>
     <br>
     <p>Already Have An Account? <a href = "./login.html">Login</a></p>
 
     <p class="mt-5 mb-3 text-muted">© 2021</p>
   </form>
 
-  
+	
 </body>
 
-<script>
-
-    function create_user()
-    {
-      var first_name = document.getElementById('inputFName').value;
-      var last_name = document.getElementById('inputLName').value;
-      var phone_number = document.getElementById('inpurPhone').value;
-      var user_email = document.getElementById('inputEmail').value;
-      var password = document.getElementById('inputPassword').value;
-    
-      if(first_name == "" || last_name == "" || phone_number == "" || user_email == "" || password == "")
-      {
-        alert("Please fill in all of the fields");
-        return;
-      }
-    
-    
-      document.getElementById("make_user_button").disabled = true;
-    
-      const Http = new XMLHttpRequest();
-      const url='http://localhost:5000/user_signup?first_name='+first_name+'&last_name='+last_name+'&phone_number='+phone_number+'&user_email='+user_email+'&password='+password;
-      Http.open("GET", url);
-      Http.send();
-    
-    
-      Http.onreadystatechange = (e) => {
-        var response = JSON.parse(Http.responseText);
-        if (response[0].CODE == "0")
-        {
-          localStorage.setItem("UID",response[0].UID);
-          window.open("./index.html","_self");
-    
-        }else if(response[0].CODE == "1")
-        {
-          alert('Email Already In Use!');
-          document.getElementById("make_user_button").disabled = false;
-    
-        }
-      }
-    }
-    
-    </script>
 
 </html>
