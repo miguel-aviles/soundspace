@@ -1,4 +1,7 @@
 
+.card-text {
+	overflow: hidden;
+}
 
 .filter-white{
     filter: invert(100%);

@@ -72,7 +72,7 @@ echo '';
 echo '<div class="collapse navbar-collapse" id="navbarTogglerDemo03">';
 echo '<ul class="navbar-nav mr-auto mt-2 mt-lg-0">';
 echo '<li class="nav-item">';
-echo '<a class="nav-link" href="vinyls.html" style="color: rgb(173, 222, 255);">Vinyls</a>';
+echo '<a class="nav-link" href="vinyls.php" style="color: rgb(173, 222, 255);">Vinyls</a>';
 echo '</li>';
 echo '<li class="nav-item">';
 echo '<a class="nav-link" href="players.html" style="color: rgb(173, 222, 255);">Record Players</a>';
@@ -81,10 +81,10 @@ echo '<li class="nav-item">';
 echo '<a class="nav-link" href="headphones.html" style="color: rgb(173, 222, 255);">Headphones</a>';
 echo '</li>';
 echo '<li class="nav-item">';
-echo '<a class="nav-link" href="login.html" style="color: rgb(173, 222, 255);">Log in<img src="svg/user.svg" alt="icon of a person\'s silhouette"></a>';
+echo '<a class="nav-link" href="login.php" style="color: rgb(173, 222, 255);">Log in<img src="svg/user.svg" alt="icon of a person\'s silhouette"></a>';
 echo '</li>';
 echo '<li class="nav-item">';
-echo '<a class="nav-link" href="cart.html" style="color: rgb(173, 222, 255);">Cart<img src="svg/shopping-cart.svg" alt="icon of a shopping cart"></a>';
+echo '<a class="nav-link" href="cart.php" style="color: rgb(173, 222, 255);">Cart<img src="svg/shopping-cart.svg" alt="icon of a shopping cart"></a>';
 echo '</li>';
 echo '</ul>';
 echo '</div>';
@@ -101,6 +101,9 @@ echo '<div class="container" style="background-color: black;">';
 echo '<div class="row">';
 echo '<h1 class="font-azul">Cart<br><br></h1>';
 echo '</div>';
+
+if ( $user_id != "" ) {
+
 echo '<div class="row">';
 echo '<table class="table table-hover table-dark table-bordered">';
 echo '<thead>';
@@ -133,6 +136,9 @@ echo '<div class="row mt-4">';
 echo '<a href="buy.html" class="btn mi-btn">Proceed to checkout</a>';
 echo '';
 echo '</div>';
+}else{
+	 echo '<h1 class="font-azul">Your cart is empty because you have not logged in/signed up.</h1>';
+}
 echo '</div>';
 echo '';
 echo '</body>';

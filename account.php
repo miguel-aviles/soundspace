@@ -19,8 +19,8 @@
   <!-- My CSS-->
   <link rel="stylesheet" href="css/styles.css">
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
 <style>
@@ -34,7 +34,10 @@
   }
 </style>
 
+
+
 <?php
+
 
 session_start();
 
@@ -49,11 +52,14 @@ function redirect ( $uri )
 
 $un="webuser";
 $pw="xJPKWzvdmaGjii3k";
-$db="users";
+$db="products";
 $hostname="localhost";
 $dblink=new mysqli($hostname,$un,$pw,$db);
 $user_id = $_SESSION['user_id'];
 
+$sql="SELECT * FROM cart WHERE user_id = '$user_id';";
+$result=$dblink->query($sql) or
+      die("Oh no! Something went wrong.");
 
 echo '<body>';
 echo '';
@@ -75,14 +81,10 @@ echo '<li class="nav-item">';
 echo '<a class="nav-link" href="headphones.html" style="color: rgb(173, 222, 255);">Headphones</a>';
 echo '</li>';
 echo '<li class="nav-item">';
-if ($user_id == ""){
 echo '<a class="nav-link" href="login.php" style="color: rgb(173, 222, 255);">Log in<img src="svg/user.svg" alt="icon of a person\'s silhouette"></a>';
-}else{
-echo '<a class="nav-link" href="account.php" style="color: rgb(173, 222, 255);">Account<img src="svg/user.svg" alt="icon of a person\'s silhouette"></a>';
-}
 echo '</li>';
 echo '<li class="nav-item">';
-echo '<a class="nav-link" href="cart.php" style="color: rgb(173, 222, 255);">Cart <img src="svg/shopping-cart.svg" alt="icon of a shopping cart"></a>';
+echo '<a class="nav-link" href="cart.php" style="color: rgb(173, 222, 255);">Cart<img src="svg/shopping-cart.svg" alt="icon of a shopping cart"></a>';
 echo '</li>';
 echo '</ul>';
 echo '</div>';
@@ -94,28 +96,14 @@ echo '<br>';
 echo '<br>';
 echo '<br>';
 echo '<br>';
-echo '<div class="center-custom" >';
-echo '<div class="rotation">';
-echo '<a href="vinyls.html">';
-echo '<img src="images/astronaut.png" height="300px" width="300px" class="center-image" alt="rotating image of an astronaut. click to view our vinyls!">';
-echo '</a>';
-echo '</div>';
 echo '<br>';
-echo '<br>';
-echo '<h1 style="padding: 10px; background-color: black; border: black 2px solid; width:max-content; margin: auto;"';
-echo 'class="space-font">';
-echo '"Music gives a soul to the universe, wings to the mind,';
-echo '<br> flight to the imagination and life to everything."';
-echo '</h1>';
+echo '<div class="container" style="background-color: black;">';
+//echo '<a href="buy.html" class="btn mi-btn">Proceed to checkout</a>';
+echo '<h1 class="font-azul">This page is under remodeling lol</h1>';
 echo '</div>';
-//echo '<p style="color: white">wopa'.$user_id.'</p>';
-echo '</body>';
-
-if($user_id != ""){
-	$_SESSION['user_id'] = $user_id;
-}
 echo '';
-echo '</html>';
+echo '</body>';
+echo '';
 
 
 ?>

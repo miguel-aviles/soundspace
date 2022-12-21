@@ -129,11 +129,13 @@ echo '</form>';
                                 	die("Oh no! Something went wrong.");
 				$info=$result->fetch_array(MYSQLI_ASSOC);
 				if($info['pw'] != $pw){
-                                	echo '<p class="text-danger">* Password entered is incorrect *</p>';
+					echo '<script>alert("- Password entered is incorrect -")</script>';
+					//echo '<p class="text-danger">* Password entered is incorrect *</p>';
 				}else{
 					$_SESSION['user_id'] = $info['id'];
-					echo '<p class="text-success">login successfull</p>';
-					sleep(3);
+					//echo '<p class="text-success">login successfull</p>';
+					echo '<script>alert("- login was successfull -")</script>';
+					//sleep(3);
 					redirect("index.php");
 				}
                         }
