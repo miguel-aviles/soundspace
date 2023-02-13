@@ -132,8 +132,8 @@ echo '</form>';
 				$sql="INSERT INTO `user_info`(`firstName`, `lastName`, `email`, `phone`, `password`) VALUES ('$firstName', '$lastName', '$email', '$phone', '$pw')";
                         	$result=$dblink->query($sql) or
                         	       	die("Oh no! Something went wrong.");
-                        	echo '<p class="text-success">!!! You are now signed up !!!</p>';
-				redirect('s0undspace.com?');
+				echo '<script>alert("- Sign up was successfull -")</script>';
+				redirect('index.php');
 			}else{
 				echo '<p class="text-danger">* There is already an account registered with this email. *</p>';	
 			}	

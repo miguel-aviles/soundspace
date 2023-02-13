@@ -52,14 +52,16 @@ function redirect ( $uri )
 
 $un="webuser";
 $pw="xJPKWzvdmaGjii3k";
-$db="products";
+$db="users";
 $hostname="localhost";
 $dblink=new mysqli($hostname,$un,$pw,$db);
 $user_id = $_SESSION['user_id'];
 
-$sql="SELECT * FROM cart WHERE user_id = '$user_id';";
+$sql="SELECT * FROM user_info WHERE id = '$user_id';";
 $result=$dblink->query($sql) or
       die("Oh no! Something went wrong.");
+
+$info=$result->fetch_array(MYSQLI_ASSOC);
 
 echo '<body>';
 echo '';
@@ -81,7 +83,7 @@ echo '<li class="nav-item">';
 echo '<a class="nav-link" href="headphones.html" style="color: rgb(173, 222, 255);">Headphones</a>';
 echo '</li>';
 echo '<li class="nav-item">';
-echo '<a class="nav-link" href="login.php" style="color: rgb(173, 222, 255);">Log in<img src="svg/user.svg" alt="icon of a person\'s silhouette"></a>';
+echo '<a class="nav-link" href="account.php" style="color: rgb(173, 222, 255);">Account<img src="svg/user.svg" alt="icon of a person\'s silhouette"></a>';
 echo '</li>';
 echo '<li class="nav-item">';
 echo '<a class="nav-link" href="cart.php" style="color: rgb(173, 222, 255);">Cart<img src="svg/shopping-cart.svg" alt="icon of a shopping cart"></a>';
@@ -99,7 +101,7 @@ echo '<br>';
 echo '<br>';
 echo '<div class="container" style="background-color: black;">';
 //echo '<a href="buy.html" class="btn mi-btn">Proceed to checkout</a>';
-echo '<h1 class="font-azul">This page is under remodeling lol</h1>';
+echo '<h1 class="font-azul">Welcome '.$info['firstName'].' '.$info['lastName'].'</h1>';
 echo '</div>';
 echo '';
 echo '</body>';
